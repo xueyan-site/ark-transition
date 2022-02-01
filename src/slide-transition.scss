@@ -1,0 +1,20 @@
+.slideActive {
+  transition-duration: .25s;
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
+}
+.slideOpacityOff {
+  opacity: 0;
+}
+.slideTop {
+  transform: translateY(-100%);
+}
+.slideRight {
+  transform: translateX(100%);
+}
+.slideBottom {
+  transform: translateY(100%);
+}
+.slideLeft {
+  transform: translateX(-100%);
+}

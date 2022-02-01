@@ -1,38 +1,166 @@
-import React, { useState, Fragment } from 'react'
-import { Article, Segment } from 'xueyan-react-markdown'
-import Playground from 'xueyan-react-playground'
-import { Switch } from 'xueyan-react-transition'
-
-const MARK1 = `
-## xueyan-react-transition
-
-\`xueyan-react-transition\` is a react component.  
-
-## Usage
-`
-
-const code1 = `
 import React, { useState } from 'react'
-import Switch from 'xueyan-react-transition'
-
-export default function Example() {
-  const [state, setState] = useState<boolean>(false)
-  return (
-    <Fragment>
-      <span>switch: </span>
-      <Switch value={state} onChange={setState} />
-    </Fragment>
-  )
-}
-`
+import { FadeTransition, SlideTransition, SwitchTransition, MoveTransition } from 'xueyan-react-transition'
 
 export default function Main() {
   return (
-    <Article>
-      <Segment>{MARK1}</Segment>
-      <Playground scope={{ React, useState, Fragment, Switch }}>
-        {code1}
-      </Playground>
-    </Article>
+    <div>
+      {/* <List/> */}
+      <Move />
+      <Switch />
+      <Slide />
+      <Fade/>
+    </div>
+  )
+}
+
+// function List() {
+//   const [visible, setVisible] = useState<boolean>(true)
+//   const [move, setMove] = useState<boolean>(false)
+//   return (
+//     <div>
+//       <div onClick={() => setVisible(!visible)}>改变</div>
+//       <div onClick={() => setMove(!move)}>移动</div>
+//       {!move && (
+//         <span
+//           style={{
+//             width: '100px',
+//             height: '20px',
+//             backgroundColor: '#cc8',
+//             display: 'inline-block',
+//           }}
+//         />
+//       )}
+//       <ListTransition>
+//         {(visible ? [1,3,6,2,5,7] : [1,6,3,5,2,7]).map(i => (
+//           <div key={i}>{i}</div>
+//         ))}
+//       </ListTransition>
+//     </div>
+//   )
+// }
+
+function Move() {
+  const [visible, setVisible] = useState<boolean>(true)
+  const [move, setMove] = useState<boolean>(false)
+  return (
+    <div>
+      <div onClick={() => setVisible(!visible)}>改变</div>
+      <div onClick={() => setMove(!move)}>移动</div>
+      {!move && (
+        <span
+          style={{
+            width: '100px',
+            height: '20px',
+            backgroundColor: '#cc8',
+            display: 'inline-block',
+          }}
+        />
+      )}
+      <MoveTransition
+        appear
+        enterActiveStyle={{
+          transition: 'all 0.3s ease-in'
+        }}
+        leaveActiveStyle={{
+          transition: 'all 0.3s ease-out'
+        }}
+        enterFromStyle={{
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }}
+        leaveToStyle={{
+          opacity: 0,
+          transform: 'translateX(100px)'
+        }}
+        enterEndedStyle={{
+          transition: 'all 1s'
+        }}
+      >
+        {visible && (
+          <span
+            key="4"
+            style={{
+              width: move ? 100 : 60,
+              height: move ? 60 : 100,
+              opacity: move ? 1 : 0.2,
+              backgroundColor: move ? 'red' : 'blue',
+              display: 'inline-block',
+            }}
+          ></span>
+        )}
+      </MoveTransition>
+    </div>
+  )
+}
+
+function Switch() {
+  const [visible, setVisible] = useState<boolean>(true)
+  return (
+    <div>
+      <div onClick={() => setVisible(!visible)}>改变</div>
+      <SwitchTransition
+        mode="out-in"
+        enterActiveStyle={{
+          transition: 'all 0.3s ease-in'
+        }}
+        leaveActiveStyle={{
+          transition: 'all 0.3s ease-out'
+        }}
+        enterFromStyle={{
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }}
+        leaveToStyle={{
+          opacity: 0,
+          transform: 'translateX(100px)'
+        }}
+      >
+        {visible ? (
+          <div key="blue" style={{ width: 100, backgroundColor: '#38f', height: 40 }}></div>
+        ) : (
+          <div key="yellow" style={{ width: 100, backgroundColor: '#f83', height: 40 }}></div>
+        )}
+      </SwitchTransition>
+    </div>
+  )
+}
+
+function Fade() {
+  const [visible, setVisible] = useState<boolean>(true)
+  return (
+    <div>
+      <div onClick={() => setVisible(!visible)}>改变</div>
+      <FadeTransition
+        value={visible}
+        opacity='.5'
+        enterTimingFunction="ease-in"
+        leaveTimingFunction="ease-out"
+      >
+        <div style={{ width: 100, backgroundColor: '#38f', height: 40 }}></div>
+      </FadeTransition>
+    </div>
+  )
+}
+
+function Slide() {
+  const [visible, setVisible] = useState<boolean>(true)
+  return (
+    <div>
+      <div onClick={() => setVisible(!visible)}>改变</div>
+      <SlideTransition 
+        value={visible}
+        disableOpacity
+        transformFrom="translateX(100%)"
+        transform="translateX(500%)"
+        transformTo="translateX(300%)"
+        enterDuration="1s"
+        leaveDuration="2s"
+        enterTimingFunction="ease-in"
+        leaveTimingFunction="ease-out"
+        leaveEndedKeep="enterFrom"
+      >
+        <div style={{ width: 100, backgroundColor: '#f83', height: 40 }}></div>
+      </SlideTransition>
+    </div>
   )
 }

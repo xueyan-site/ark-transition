@@ -1,0 +1,19 @@
+.slideFadeEnterActive {
+  transition: all 0.3s ease-out;
+}
+
+.slideFadeLeaveActive {
+  transition: all 0.3s ease-in;
+}
+
+.slideFadeEnterFrom {
+  transform: translateX(-100px);
+}
+
+.slideFadeLeaveTo {
+  transform: translateX(100px);
+}
+
+.slideFadeEnterFrom, .slideFadeLeaveTo {
+  opacity: 0;
+}

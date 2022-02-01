@@ -1,0 +1,8 @@
+.fadeActive {
+  transition-duration: .25s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+.fadeOff {
+  opacity: 0;
+}
