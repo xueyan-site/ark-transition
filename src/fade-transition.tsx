@@ -14,6 +14,8 @@ interface PartTransitionProps extends Pick<
 > {}
 
 export interface FadeTransitionProps extends PartTransitionProps {
+  /** 在退出后卸载节点 */
+  unmount?: boolean
   /** 进入后的透明度 */
   opacity?: React.CSSProperties['opacity']
   /** 进入前的延迟时间 */
@@ -37,6 +39,7 @@ export function FadeTransition({
   onActive,
   onAfter,
   onCancelled,
+  unmount,
   opacity,
   enterDelay,
   enterDuration,
@@ -71,6 +74,8 @@ export function FadeTransition({
         transitionTimingFunction: leaveTimingFunction,
       }}
       leaveTo={styles.fadeOff}
+      leaveEndedKeep={unmount ? undefined : 'leaveEnded'}
+      leaveEnded={styles.fadeEnded}
     >
       {children}
     </Transition>

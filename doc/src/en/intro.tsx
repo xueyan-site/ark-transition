@@ -126,7 +126,7 @@ function Switch() {
 }
 
 function Fade() {
-  const [visible, setVisible] = useState<boolean>(true)
+  const [visible, setVisible] = useState<boolean>(false)
   return (
     <div>
       <div onClick={() => setVisible(!visible)}>改变</div>
@@ -136,7 +136,18 @@ function Fade() {
         enterTimingFunction="ease-in"
         leaveTimingFunction="ease-out"
       >
-        <div style={{ width: 100, backgroundColor: '#38f', height: 40 }}></div>
+        <div style={{ width: 100, backgroundColor: '#38f', height: 40, overflow: 'auto' }}>
+          <div>jjjj</div>
+          <div>jjjj</div>
+          <div>头疼头疼头疼</div>
+          <div>jjjj</div>
+          <div>我的分割线</div>
+          <div>jjjj</div>
+          <div>00</div>
+          <div>=============</div>
+          <div>jjjj</div>
+          <div>jjjj</div>
+        </div>
       </FadeTransition>
     </div>
   )
