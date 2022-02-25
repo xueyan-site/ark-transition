@@ -56,6 +56,8 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
   if (stage === 'enterStart') {
     newProps.className = cn(
       oldProps.className,
+      props.side,
+      props.active,
       props.enterActive,
       (appear && 'appearFrom' in props)
         ? props.appearFrom 
@@ -64,6 +66,8 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     newProps.style = Object.assign(
       {},
       oldProps.style,
+      props.sideStyle,
+      props.activeStyle,
       (appear && 'appearActiveStyle' in props)
         ? props.appearActiveStyle
         : props.enterActiveStyle,
@@ -75,6 +79,7 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     newProps.className = cn(
       oldProps.className,
       props.middle,
+      props.active,
       props.enterActive,
       (appear && 'appearTo' in props)
         ? props.appearTo 
@@ -84,6 +89,7 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
       {},
       oldProps.style,
       props.middleStyle,
+      props.activeStyle,
       (appear && 'appearActiveStyle' in props)
         ? props.appearActiveStyle
         : props.enterActiveStyle,
@@ -107,6 +113,7 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     newProps.className = cn(
       oldProps.className,
       props.middle,
+      props.active,
       props.leaveActive,
       props.leaveFrom
     )
@@ -114,18 +121,23 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
       {},
       oldProps.style,
       props.middleStyle,
+      props.activeStyle,
       props.leaveActiveStyle,
       props.leaveFromStyle
     )
   } else if (stage === 'leaving') {
     newProps.className = cn(
       oldProps.className,
+      props.side,
+      props.active,
       props.leaveActive,
       props.leaveTo
     )
     newProps.style = Object.assign(
       {},
       oldProps.style,
+      props.sideStyle,
+      props.activeStyle,
       props.leaveActiveStyle,
       props.leaveToStyle
     )

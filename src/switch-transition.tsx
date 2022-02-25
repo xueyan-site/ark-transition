@@ -59,7 +59,7 @@ export function SwitchTransition({
 }: SwitchTransitionProps) {
   const dirRef = useRef<boolean>(true)
   const firstRef = useRef<boolean>(true)
-  const prevRef = useRef<React.ReactNode>()
+  const prevRef = useRef<React.ReactNode>(children)
   const [state, setState] = useState<SwitchTransitionState>({
     node1: children,
     value1: Boolean(children)

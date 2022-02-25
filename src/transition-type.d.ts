@@ -92,18 +92,12 @@ export type TransitionCancelledListener = (
   appear: boolean
 ) => void
 
-/**
- * 过渡各阶段可设置的样式和类名
- */
-interface TransitionClassesAndStyles {
+interface TransitionBaseClassesAndStyles {
   initial?: string
   initialStyle?: React.CSSProperties
 
   appearFrom?: string
   appearFromStyle?: React.CSSProperties
-
-  appearActive?: string
-  appearActiveStyle?: React.CSSProperties
 
   appearTo?: string
   appearToStyle?: React.CSSProperties
@@ -111,29 +105,40 @@ interface TransitionClassesAndStyles {
   enterFrom?: string
   enterFromStyle?: React.CSSProperties
 
-  enterActive?: string
-  enterActiveStyle?: React.CSSProperties
-
   enterTo?: string
   enterToStyle?: React.CSSProperties
 
   enterEnded?: string
   enterEndedStyle?: React.CSSProperties
 
-  middle?: string
-  middleStyle?: React.CSSProperties
-
   leaveFrom?: string
   leaveFromStyle?: React.CSSProperties
-
-  leaveActive?: string
-  leaveActiveStyle?: React.CSSProperties
 
   leaveTo?: string
   leaveToStyle?: React.CSSProperties
 
   leaveEnded?: string
   leaveEndedStyle?: React.CSSProperties
+}
+
+interface TransitionClassesAndStyles extends TransitionBaseClassesAndStyles {
+  appearActive?: string
+  appearActiveStyle?: React.CSSProperties
+
+  enterActive?: string
+  enterActiveStyle?: React.CSSProperties
+
+  leaveActive?: string
+  leaveActiveStyle?: React.CSSProperties
+
+  side?: string
+  sideStyle?: React.CSSProperties
+
+  middle?: string
+  middleStyle?: React.CSSProperties
+
+  active?: string
+  activeStyle?: React.CSSProperties
 }
 
 export interface TransitionRendererProps {

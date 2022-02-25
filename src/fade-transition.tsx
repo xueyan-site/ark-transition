@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import { Transition } from './transition'
 import type { TransitionProps } from './transition-type'
 import styles from './fade-transition.scss'
@@ -7,16 +8,28 @@ interface PartTransitionProps extends Pick<
   TransitionProps,
   | 'children'
   | 'value'
+  | 'initialKeep'
+  | 'leaveEndedKeep'
   | 'onBefore'
   | 'onActive'
   | 'onAfter'
   | 'onCancelled'
+  | 'enterFrom'
+  | 'enterFromStyle'
+  | 'leaveTo'
+  | 'leaveToStyle'
+  | 'side'
+  | 'sideStyle'
+  | 'middle'
+  | 'middleStyle'
+  | 'active'
+  | 'activeStyle'
 > {}
 
 export interface FadeTransitionProps extends PartTransitionProps {
   /** 在退出后卸载节点 */
   unmount?: boolean
-  /** 进入后的透明度 */
+  /** 进入前或退出后的透明度（默认透明） */
   opacity?: React.CSSProperties['opacity']
   /** 进入前的延迟时间 */
   enterDelay?: React.CSSProperties['transitionDelay']
@@ -35,10 +48,22 @@ export interface FadeTransitionProps extends PartTransitionProps {
 export function FadeTransition({
   children,
   value,
+  initialKeep,
+  leaveEndedKeep,
   onBefore,
   onActive,
   onAfter,
   onCancelled,
+  enterFrom,
+  enterFromStyle,
+  leaveTo,
+  leaveToStyle,
+  side,
+  sideStyle,
+  middle,
+  middleStyle,
+  active,
+  activeStyle,
   unmount,
   opacity,
   enterDelay,
@@ -57,25 +82,29 @@ export function FadeTransition({
       onActive={onActive}
       onAfter={onAfter}
       onCancelled={onCancelled}
-      enterActive={styles.fadeActive}
+      initialKeep={initialKeep}
+      leaveEndedKeep={unmount ? undefined : (leaveEndedKeep || 'leaveEnded')}
+      enterFrom={enterFrom}
+      enterFromStyle={enterFromStyle}
+      leaveTo={leaveTo}
+      leaveToStyle={leaveToStyle}
+      leaveEnded={styles.fadeEnded}
+      side={cn(opacity ? undefined : styles.fadeSide, side)}
+      sideStyle={{ opacity, ...sideStyle }}
+      middle={middle}
+      middleStyle={middleStyle}
+      active={cn(styles.fadeActive, active)}
+      activeStyle={activeStyle}
       enterActiveStyle={{
         transitionDelay: enterDelay,
         transitionDuration: enterDuration,
         transitionTimingFunction: enterTimingFunction,
       }}
-      enterFrom={styles.fadeOff}
-      middleStyle={{
-        opacity
-      }}
-      leaveActive={styles.fadeActive}
       leaveActiveStyle={{
         transitionDelay: leaveDelay,
         transitionDuration: leaveDuration,
         transitionTimingFunction: leaveTimingFunction,
       }}
-      leaveTo={styles.fadeOff}
-      leaveEndedKeep={unmount ? undefined : 'leaveEnded'}
-      leaveEnded={styles.fadeEnded}
     >
       {children}
     </Transition>

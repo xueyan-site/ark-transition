@@ -95,9 +95,11 @@ function Move() {
 
 function Switch() {
   const [visible, setVisible] = useState<boolean>(true)
+  const [value, setValue] = useState<boolean>(true)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变</div>
+      <div onClick={() => setVisible(!visible)}>显隐</div>
+      <div onClick={() => setValue(!value)}>改变</div>
       <SwitchTransition
         mode="out-in"
         enterActiveStyle={{
@@ -115,7 +117,7 @@ function Switch() {
           transform: 'translateX(100px)'
         }}
       >
-        {visible ? (
+        {!visible ? null : value ? (
           <div key="blue" style={{ width: 100, backgroundColor: '#38f', height: 40 }}></div>
         ) : (
           <div key="yellow" style={{ width: 100, backgroundColor: '#f83', height: 40 }}></div>
@@ -132,7 +134,6 @@ function Fade() {
       <div onClick={() => setVisible(!visible)}>改变</div>
       <FadeTransition
         value={visible}
-        opacity='.5'
         enterTimingFunction="ease-in"
         leaveTimingFunction="ease-out"
       >
@@ -160,15 +161,11 @@ function Slide() {
       <div onClick={() => setVisible(!visible)}>改变</div>
       <SlideTransition 
         value={visible}
-        disableOpacity
-        transformFrom="translateX(100%)"
-        transform="translateX(500%)"
-        transformTo="translateX(300%)"
+        opacity={1}
         enterDuration="1s"
         leaveDuration="2s"
         enterTimingFunction="ease-in"
         leaveTimingFunction="ease-out"
-        leaveEndedKeep="enterFrom"
       >
         <div style={{ width: 100, backgroundColor: '#f83', height: 40 }}></div>
       </SlideTransition>

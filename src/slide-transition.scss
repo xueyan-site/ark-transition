@@ -1,10 +1,6 @@
 .slideActive {
-  transition-duration: .25s;
+  perspective: 1000;
   transition-property: opacity, transform;
-  transition-timing-function: ease;
-}
-.slideOpacityOff {
-  opacity: 0;
 }
 .slideTop {
   transform: translateY(-100%);
