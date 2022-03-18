@@ -11,10 +11,17 @@ export type SlideTransitionDiraction =
   | 'left'
 
 export interface SlideTransitionProps extends FadeTransitionProps {
-  /** 相对进入后而言，进入前在哪个方向（默认为上） **/
+  /** 进入时移动的方向（不传则不移动） **/
   direction?: SlideTransitionDiraction
-  /** 进入前或退出后的转换（默认以direction为准） */
+  /** 进入前或退出后的转换位置（优先级高于direction） */
   transform?: React.CSSProperties['transform']
+}
+
+const DIR_STYLES: Record<string, string> = {
+  top: styles.slideTop,
+  right: styles.slideRight,
+  bottom: styles.slideBottom,
+  left: styles.slideLeft
 }
 
 export function SlideTransition({
@@ -26,19 +33,15 @@ export function SlideTransition({
   active,
   ...others
 }: SlideTransitionProps) {
-  const slideSide = transform 
-    ? undefined
-    : direction === 'bottom'
-    ? styles.slideBottom
-    : direction === 'right' 
-    ? styles.slideRight
-    : direction === 'left' 
-    ? styles.slideLeft
-    : styles.slideTop
   return (
     <FadeTransition
       {...others}
-      side={cn(slideSide, side)}
+      side={cn(
+        side,
+        !transform && direction 
+          ? DIR_STYLES[direction] 
+          : undefined
+      )}
       sideStyle={{ transform, ...sideStyle }}
       active={cn(styles.slideActive, active)}
     >
