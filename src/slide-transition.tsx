@@ -18,10 +18,10 @@ export interface SlideTransitionProps extends FadeTransitionProps {
 }
 
 const DIR_STYLES: Record<string, string> = {
-  top: styles.slideTop,
-  right: styles.slideRight,
-  bottom: styles.slideBottom,
-  left: styles.slideLeft
+  top: styles.xrslidetop,
+  right: styles.xrslideright,
+  bottom: styles.xrslidebottom,
+  left: styles.xrslideleft
 }
 
 export function SlideTransition({
@@ -43,7 +43,7 @@ export function SlideTransition({
           : undefined
       )}
       sideStyle={{ transform, ...sideStyle }}
-      active={cn(styles.slideActive, active)}
+      active={cn(styles.xrslideactive, active)}
     >
       {children}
     </FadeTransition>

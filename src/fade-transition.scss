@@ -1,11 +1,11 @@
-.fadeActive {
+.xrfadeactive {
   transition-duration: .25s;
   transition-property: opacity;
   transition-timing-function: ease;
 }
-.fadeSide {
+.xrfadeside {
   opacity: 0;
 }
-.fadeEnded {
+.xrfadeended {
   display: none;
 }

@@ -1,16 +1,16 @@
-.slideActive {
+.xrslideactive {
   perspective: 1000;
   transition-property: opacity, transform;
 }
-.slideTop {
+.xrslidetop {
   transform: translateY(-100%);
 }
-.slideRight {
+.xrslideright {
   transform: translateX(100%);
 }
-.slideBottom {
+.xrslidebottom {
   transform: translateY(100%);
 }
-.slideLeft {
+.xrslideleft {
   transform: translateX(-100%);
 }

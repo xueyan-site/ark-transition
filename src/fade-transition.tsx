@@ -88,12 +88,12 @@ export function FadeTransition({
       enterFromStyle={enterFromStyle}
       leaveTo={leaveTo}
       leaveToStyle={leaveToStyle}
-      leaveEnded={styles.fadeEnded}
-      side={cn(opacity ? undefined : styles.fadeSide, side)}
+      leaveEnded={styles.xrfadeended}
+      side={cn(opacity ? undefined : styles.xrfadeside, side)}
       sideStyle={{ opacity, ...sideStyle }}
       middle={middle}
       middleStyle={middleStyle}
-      active={cn(styles.fadeActive, active)}
+      active={cn(styles.xrfadeactive, active)}
       activeStyle={activeStyle}
       enterActiveStyle={{
         transitionDelay: enterDelay,
