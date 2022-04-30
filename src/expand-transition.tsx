@@ -68,7 +68,6 @@ export const ExpandTransition = forwardRef<ExpandTransitionRef, ExpandTransition
       leaveEndedKeep="side"
       side={styles.xrexpandside}
       active={styles.xrexpandactive}
-      enterEnded={styles.xrshrinkenterended}
       sideStyle={{ width, height }}
       middleStyle={{
         width: rootRef.current?.scrollWidth,

@@ -4,7 +4,7 @@
 .xrexpandside, .xrexpandactive {
   overflow: hidden;
 }
-.xrexpandactive, .xrshrinkenterended {
+.xrexpandactive {
   transition-duration: .25s;
   transition-property: width, height;
   transition-timing-function: ease;
