@@ -4,7 +4,7 @@ import { Transition } from './transition'
 import type { TransitionProps } from './transition-type'
 import styles from './fade-transition.scss'
 
-interface PartTransitionProps extends Pick<
+export interface FadeTransitionProps extends Pick<
   TransitionProps,
   | 'children'
   | 'value'
@@ -24,9 +24,7 @@ interface PartTransitionProps extends Pick<
   | 'middleStyle'
   | 'active'
   | 'activeStyle'
-> {}
-
-export interface FadeTransitionProps extends PartTransitionProps {
+> {
   /** 在退出后卸载节点 */
   unmount?: boolean
   /** 进入前或退出后的透明度（默认透明） */

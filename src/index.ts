@@ -3,6 +3,7 @@ export { SwitchTransition } from './switch-transition'
 export { MoveTransition } from './move-transition'
 export { FadeTransition } from './fade-transition'
 export { SlideTransition } from './slide-transition'
+export { ExpandTransition } from './expand-transition'
 export { FLIP } from './flip'
 
 export type {
@@ -28,3 +29,7 @@ export type {
   SlideTransitionProps, 
   SlideTransitionDiraction 
 } from './slide-transition'
+export type {
+  ExpandTransitionRef,
+  ExpandTransitionProps
+} from './expand-transition'

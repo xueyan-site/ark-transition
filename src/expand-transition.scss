@@ -1,0 +1,11 @@
+.xrexpandside {
+  height: 0;
+}
+.xrexpandside, .xrexpandactive {
+  overflow: hidden;
+}
+.xrexpandactive, .xrshrinkenterended {
+  transition-duration: .25s;
+  transition-property: width, height;
+  transition-timing-function: ease;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FadeTransition, SlideTransition, SwitchTransition, MoveTransition } from 'xueyan-react-transition'
+import { FadeTransition, SlideTransition, SwitchTransition, MoveTransition, ExpandTransition } from 'xueyan-react-transition'
 
 export default function Main() {
   return (
@@ -9,6 +9,31 @@ export default function Main() {
       <Switch />
       <Slide />
       <Fade/>
+      <Expand/>
+    </div>
+  )
+}
+
+function Expand() {
+  const [visible, setVisible] = useState<boolean>(true)
+  const [move, setMove] = useState<boolean>(false)
+  return (
+    <div>
+      <div onClick={() => setVisible(!visible)}>改变 {visible ? 'true' : 'false'}</div>
+      <div onClick={() => setMove(!move)}>移动</div>
+      <ExpandTransition
+        value={visible}
+        height={move ? 30 : undefined}
+        width={60}
+      >
+        <div
+          style={{
+            width: move ? 100 : 60,
+            height: move ? 60 : 100,
+            backgroundColor: move ? 'red' : 'blue',
+          }}
+        />
+      </ExpandTransition>
     </div>
   )
 }
@@ -44,8 +69,8 @@ function Move() {
   const [move, setMove] = useState<boolean>(false)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变</div>
-      <div onClick={() => setMove(!move)}>移动</div>
+      <div onClick={() => setVisible(!visible)}>改变 move</div>
+      <div onClick={() => setMove(!move)}>移动 move</div>
       {!move && (
         <span
           style={{
@@ -98,8 +123,8 @@ function Switch() {
   const [value, setValue] = useState<boolean>(true)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>显隐</div>
-      <div onClick={() => setValue(!value)}>改变</div>
+      <div onClick={() => setValue(!value)}>改变 switch</div>
+      <div onClick={() => setVisible(!visible)}>显隐 switch</div>
       <SwitchTransition
         mode="out-in"
         enterActiveStyle={{
@@ -131,7 +156,7 @@ function Fade() {
   const [visible, setVisible] = useState<boolean>(false)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变</div>
+      <div onClick={() => setVisible(!visible)}>改变 fade</div>
       <FadeTransition
         value={visible}
         enterTimingFunction="ease-in"
@@ -158,9 +183,10 @@ function Slide() {
   const [visible, setVisible] = useState<boolean>(true)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变</div>
+      <div onClick={() => setVisible(!visible)}>改变 slide</div>
       <SlideTransition 
         value={visible}
+        direction="top"
         opacity={1}
         enterDuration="1s"
         leaveDuration="2s"

@@ -13,7 +13,7 @@ export type SwitchTransitionMode =
   | 'in-out'
   | 'out-in'
 
-type PartTransitionProps = Omit<
+export interface SwitchTransitionProps extends Omit<
   TransitionProps,
   | 'render'
   | 'value'
@@ -24,9 +24,7 @@ type PartTransitionProps = Omit<
   | 'initialStyle'
   | 'leaveEnded'
   | 'leaveEndedStyle'
->
-
-export interface SwitchTransitionProps extends PartTransitionProps {
+> {
   /** 过渡的模式 */
   mode?: SwitchTransitionMode
 }

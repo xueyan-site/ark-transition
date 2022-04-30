@@ -1,5 +1,6 @@
-import React, { isValidElement, cloneElement } from 'react'
+import React, { isValidElement } from 'react'
 import cn from 'classnames'
+import { clone } from 'xueyan-react-clone'
 import type { 
   TransitionRendererProps, 
   TransitionClassesAndStyles, 
@@ -49,13 +50,9 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     return null
   }
 
-  const oldProps = children.props
   const newProps: Partial<any> = {}
-
-  /** 在原children上添加样式和类名 */
   if (stage === 'enterStart') {
     newProps.className = cn(
-      oldProps.className,
       props.side,
       props.active,
       props.enterActive,
@@ -65,7 +62,6 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
     newProps.style = Object.assign(
       {},
-      oldProps.style,
       props.sideStyle,
       props.activeStyle,
       (appear && 'appearActiveStyle' in props)
@@ -77,7 +73,6 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
   } else if (stage === 'entering') {
     newProps.className = cn(
-      oldProps.className,
       props.middle,
       props.active,
       props.enterActive,
@@ -87,7 +82,6 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
     newProps.style = Object.assign(
       {},
-      oldProps.style,
       props.middleStyle,
       props.activeStyle,
       (appear && 'appearActiveStyle' in props)
@@ -99,19 +93,16 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
   } else if (stage === 'enterEnded') {
     newProps.className = cn(
-      oldProps.className, 
       props.middle, 
       props.enterEnded
     )
     newProps.style = Object.assign(
       {},
-      oldProps.style,
       props.middleStyle,
       props.enterEndedStyle
     )
   } else if (stage === 'leaveStart') {
     newProps.className = cn(
-      oldProps.className,
       props.middle,
       props.active,
       props.leaveActive,
@@ -119,7 +110,6 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
     newProps.style = Object.assign(
       {},
-      oldProps.style,
       props.middleStyle,
       props.activeStyle,
       props.leaveActiveStyle,
@@ -127,7 +117,6 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
   } else if (stage === 'leaving') {
     newProps.className = cn(
-      oldProps.className,
       props.side,
       props.active,
       props.leaveActive,
@@ -135,7 +124,6 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
     )
     newProps.style = Object.assign(
       {},
-      oldProps.style,
       props.sideStyle,
       props.activeStyle,
       props.leaveActiveStyle,
@@ -146,50 +134,49 @@ export function TransitionDefaultRenderer(props: TransitionDefaultRendererProps)
       stage === 'initial' 
         ? initialKeep 
         : leaveEndedKeep
-    newProps.className = cn(
-      oldProps.className, 
-      keep === 'initial' 
-        ? props.initial
-        : keep === 'enterFrom'
-        ? props.enterFrom
-        : keep === 'leaveTo'
-        ? props.leaveTo
-        : keep === 'leaveEnded'
-        ? props.leaveEnded
-        : undefined
-    )
-    newProps.style = Object.assign(
-      {},
-      oldProps.style,
-      keep === 'initial' 
-        ? props.initialStyle
-        : keep === 'enterFrom'
-        ? props.enterFromStyle
-        : keep === 'leaveTo'
-        ? props.leaveToStyle
-        : keep === 'leaveEnded'
-        ? props.leaveEndedStyle
-        : undefined
-    )
+    newProps.className = keep === 'initial' 
+      ? props.initial
+      : keep === 'enterFrom'
+      ? props.enterFrom
+      : keep === 'leaveTo'
+      ? props.leaveTo
+      : keep === 'leaveEnded'
+      ? props.leaveEnded
+      : keep === 'side'
+      ? props.side
+      : keep === 'middle'
+      ? props.middle
+      : undefined
+    newProps.style = keep === 'initial' 
+      ? props.initialStyle
+      : keep === 'enterFrom'
+      ? props.enterFromStyle
+      : keep === 'leaveTo'
+      ? props.leaveToStyle
+      : keep === 'leaveEnded'
+      ? props.leaveEndedStyle
+      : keep === 'side'
+      ? props.sideStyle
+      : keep === 'middle'
+      ? props.middleStyle
+      : undefined
   }
 
-  /** 在原children上添加监听器 */
-  const type = props.type || 'auto'
-  if (type === 'auto' || type === 'animation') {
-    const oldOnAE = oldProps.onAnimationEnd
-    newProps.onAnimationEnd = oldOnAE ? ((e: any) => {
-      end()
-      oldOnAE(e)
-    }) : end
-  }
-  if (type === 'auto' || type === 'transition') {
-    const oldOnTE = oldProps.onTransitionEnd
-    newProps.onTransitionEnd = oldOnTE ? ((e: any) => {
-      end()
-      oldOnTE(e)
-    }) : end
-  }
-
-  newProps.className = newProps.className || undefined
-  return cloneElement(children, newProps)
+  return clone(children, newProps, (prev, curr) => {
+    const type = props.type || 'auto'
+    if (type === 'auto' || type === 'animation') {
+      const oldOnAE = prev.onAnimationEnd
+      curr.onAnimationEnd = oldOnAE ? ((e: any) => {
+        end()
+        oldOnAE(e)
+      }) : end
+    }
+    if (type === 'auto' || type === 'transition') {
+      const oldOnTE = prev.onTransitionEnd
+      curr.onTransitionEnd = oldOnTE ? ((e: any) => {
+        end()
+        oldOnTE(e)
+      }) : end
+    }
+  })
 }

@@ -3,7 +3,7 @@ import { Transition } from './transition'
 import type { TransitionProps } from './transition-type'
 import { FLIP } from './flip'
 
-type PartTransitionProps = Omit<
+export interface MoveTransitionProps extends Omit<
   TransitionProps,
   | 'render'
   | 'value'
@@ -14,9 +14,7 @@ type PartTransitionProps = Omit<
   | 'initialStyle'
   | 'leaveEnded'
   | 'leaveEndedStyle'
->
-
-export interface MoveTransitionProps extends PartTransitionProps {}
+> {}
 
 export function MoveTransition({
   children,

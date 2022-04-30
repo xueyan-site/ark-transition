@@ -41,6 +41,8 @@ export type TransitionKeep =
   | 'enterFrom'
   | 'leaveTo'
   | 'leaveEnded'
+  | 'side'
+  | 'middle'
 
 /**
  * 停止过渡

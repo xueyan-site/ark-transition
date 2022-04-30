@@ -38,8 +38,10 @@ export function SlideTransition({
       {...others}
       side={cn(
         side,
-        !transform && direction 
-          ? DIR_STYLES[direction] 
+        transform
+          ? undefined
+          : direction 
+          ? DIR_STYLES[direction]
           : undefined
       )}
       sideStyle={{ transform, ...sideStyle }}
