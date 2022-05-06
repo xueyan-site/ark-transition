@@ -1,7 +1,8 @@
-import React, { useRef, isValidElement, cloneElement } from 'react'
+import React, { useRef, isValidElement } from 'react'
 import { Transition } from './transition'
-import type { TransitionProps } from './transition-type'
 import { FLIP } from './flip'
+import { clone } from 'xueyan-react-clone'
+import type { TransitionProps } from './transition-type'
 
 export interface MoveTransitionProps extends Omit<
   TransitionProps,
@@ -35,7 +36,7 @@ export function MoveTransition({
     if (!appearRef.current && flipRef.current) {
       flipRef.current.prepare()
     }
-    node = cloneElement(nodeRef.current, {
+    node = clone(nodeRef.current, {
       ref: (dom?: HTMLElement) => {
         if (dom) {
           if (flipRef.current) {

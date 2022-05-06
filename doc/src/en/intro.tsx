@@ -14,30 +14,6 @@ export default function Main() {
   )
 }
 
-function Expand() {
-  const [visible, setVisible] = useState<boolean>(true)
-  const [move, setMove] = useState<boolean>(false)
-  return (
-    <div>
-      <div onClick={() => setVisible(!visible)}>改变 {visible ? 'true' : 'false'}</div>
-      <div onClick={() => setMove(!move)}>移动</div>
-      <ExpandTransition
-        value={visible}
-        height={move ? 30 : undefined}
-        width={60}
-      >
-        <div
-          style={{
-            width: move ? 100 : 60,
-            height: move ? 60 : 100,
-            backgroundColor: move ? 'red' : 'blue',
-          }}
-        />
-      </ExpandTransition>
-    </div>
-  )
-}
-
 // function List() {
 //   const [visible, setVisible] = useState<boolean>(true)
 //   const [move, setMove] = useState<boolean>(false)
@@ -69,7 +45,7 @@ function Move() {
   const [move, setMove] = useState<boolean>(false)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变 move</div>
+      <div onClick={() => setVisible(!visible)}>move 改变 move</div>
       <div onClick={() => setMove(!move)}>移动 move</div>
       {!move && (
         <span
@@ -123,7 +99,7 @@ function Switch() {
   const [value, setValue] = useState<boolean>(true)
   return (
     <div>
-      <div onClick={() => setValue(!value)}>改变 switch</div>
+      <div onClick={() => setValue(!value)}>switch 改变 switch</div>
       <div onClick={() => setVisible(!visible)}>显隐 switch</div>
       <SwitchTransition
         mode="out-in"
@@ -152,11 +128,31 @@ function Switch() {
   )
 }
 
+function Slide() {
+  const [visible, setVisible] = useState<boolean>(true)
+  return (
+    <div>
+      <div onClick={() => setVisible(!visible)}>slide 改变 slide</div>
+      <SlideTransition 
+        value={visible}
+        direction="top"
+        opacity={1}
+        enterDuration="1s"
+        leaveDuration="2s"
+        enterTimingFunction="ease-in"
+        leaveTimingFunction="ease-out"
+      >
+        <div style={{ width: 100, backgroundColor: '#f83', height: 40 }}></div>
+      </SlideTransition>
+    </div>
+  )
+}
+
 function Fade() {
   const [visible, setVisible] = useState<boolean>(false)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变 fade</div>
+      <div onClick={() => setVisible(!visible)}>fade 改变 fade</div>
       <FadeTransition
         value={visible}
         enterTimingFunction="ease-in"
@@ -179,22 +175,29 @@ function Fade() {
   )
 }
 
-function Slide() {
+function Expand() {
   const [visible, setVisible] = useState<boolean>(true)
+  const [move, setMove] = useState<boolean>(false)
   return (
     <div>
-      <div onClick={() => setVisible(!visible)}>改变 slide</div>
-      <SlideTransition 
+      <div onClick={() => setVisible(!visible)}>expand 改变 {visible ? 'true' : 'false'}</div>
+      <div onClick={() => setMove(!move)}>移动</div>
+      <ExpandTransition
         value={visible}
-        direction="top"
-        opacity={1}
-        enterDuration="1s"
-        leaveDuration="2s"
-        enterTimingFunction="ease-in"
-        leaveTimingFunction="ease-out"
+        height={move ? 30 : undefined}
+        width={40}
+        style={{
+          width: 'fit-content'
+        }}
       >
-        <div style={{ width: 100, backgroundColor: '#f83', height: 40 }}></div>
-      </SlideTransition>
+        <div
+          style={{
+            width: move ? 100 : 60,
+            height: move ? 60 : 100,
+            backgroundColor: move ? 'red' : 'blue',
+          }}
+        />
+      </ExpandTransition>
     </div>
   )
 }

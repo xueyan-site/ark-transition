@@ -50,15 +50,27 @@ export const ExpandTransition = forwardRef<ExpandTransitionRef, ExpandTransition
   leaveTimingFunction
 }, ref) => {
   const rootRef = useRef<HTMLDivElement>(null)
-  const [_update, setUpdate] = useState<any>()
+  const [rect, setRect] = useState<React.CSSProperties>()
 
   useImperativeHandle(ref, () => ({
     rootNode: rootRef.current
   }), [rootRef.current])
 
   useEffect(() => {
-    setUpdate(Math.random())
-  }, [rootRef.current])
+    const rootNode = rootRef.current
+    if (rootNode) {
+      if (
+        !rect 
+        || rect.width !== rootNode.scrollWidth 
+        || rect.height !== rootNode.scrollHeight
+      ) {
+        setRect({
+          width: rootNode.scrollWidth,
+          height: rootNode.scrollHeight
+        })
+      }
+    }
+  }, [value])
 
   return (
     <Transition
@@ -69,10 +81,8 @@ export const ExpandTransition = forwardRef<ExpandTransitionRef, ExpandTransition
       side={styles.xrexpandside}
       active={styles.xrexpandactive}
       sideStyle={{ width, height }}
-      middleStyle={{
-        width: rootRef.current?.scrollWidth,
-        height: rootRef.current?.scrollHeight
-      }}
+      enterToStyle={rect}
+      leaveFromStyle={rect}
       enterActiveStyle={{
         transitionDelay: enterDelay,
         transitionDuration: enterDuration,
