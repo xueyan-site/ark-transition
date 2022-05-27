@@ -96,7 +96,18 @@ export function SwitchTransition({
 
     dirRef.current = !dirRef.current
 
-    if (mode === 'in-out') {
+    if (mode === 'all') {
+      return setState({
+        [dir ? 'value1' : 'value2']: false,
+        [dir ? 'value2' : 'value1']: true,
+        [dir ? 'node1' : 'node2']: prev,
+        [dir ? 'node2' : 'node1']: children,
+        [dir ? 'before2' : 'before1']: onBefore,
+        [dir ? 'active2' : 'active1']: onActive,
+        [dir ? 'cancelled2' : 'cancelled1']: onCancelled,
+        [dir ? 'after2' : 'after1']: onAfter,
+      })
+    } else if (mode === 'in-out') {
       return setState({
         value1: true,
         value2: true,
@@ -116,54 +127,41 @@ export function SwitchTransition({
           })
         }
       })
-    } else if (mode === 'out-in') {
-      if (state.value1 || state.value2) {
-        return setState({
-          value1: false,
-          value2: false,
-          [dir ? 'node1' : 'node2']: prev,
-          [dir ? 'node2' : 'node1']: children,
-          [dir ? 'before1' : 'before2']: onBefore,
-          [dir ? 'cancelled1' : 'cancelled2']: onCancelled,
-          [dir ? 'endByOnAfter1': 'endByOnAfter2']: true,
-          [dir ? 'after1' : 'after2']: (_a: any, _b: any, end: any) => {
-            setState({
-              [dir ? 'value1' : 'value2']: false,
-              [dir ? 'value2' : 'value1']: true,
-              [dir ? 'node1' : 'node2']: prev,
-              [dir ? 'node2' : 'node1']: children,
-              [dir ? 'cancelled2' : 'cancelled1']: onCancelled,
-              [dir ? 'after2' : 'after1']: onAfter,
-              [dir ? 'active2' : 'active1']: (_a: any, _b: any, _c: any) => {
-                end()
-                if (onActive) {
-                  onActive(_a, _b, _c)
-                }
-              }
-            })
-          }
-        })
-      } else {
-        setState({
-          [dir ? 'value1' : 'value2']: false,
-          [dir ? 'value2' : 'value1']: true,
-          [dir ? 'node1' : 'node2']: prev,
-          [dir ? 'node2' : 'node1']: children,
-          [dir ? 'active2' : 'active1']: onActive,
-          [dir ? 'cancelled2' : 'cancelled1']: onCancelled,
-          [dir ? 'after2' : 'after1']: onAfter
-        })
-      }
-    } else {
+    } else if (state.value1 || state.value2) {
       return setState({
+        value1: false,
+        value2: false,
+        [dir ? 'node1' : 'node2']: prev,
+        [dir ? 'node2' : 'node1']: children,
+        [dir ? 'before1' : 'before2']: onBefore,
+        [dir ? 'cancelled1' : 'cancelled2']: onCancelled,
+        [dir ? 'endByOnAfter1': 'endByOnAfter2']: true,
+        [dir ? 'after1' : 'after2']: (_a: any, _b: any, end: any) => {
+          setState({
+            [dir ? 'value1' : 'value2']: false,
+            [dir ? 'value2' : 'value1']: true,
+            [dir ? 'node1' : 'node2']: prev,
+            [dir ? 'node2' : 'node1']: children,
+            [dir ? 'cancelled2' : 'cancelled1']: onCancelled,
+            [dir ? 'after2' : 'after1']: onAfter,
+            [dir ? 'active2' : 'active1']: (_a: any, _b: any, _c: any) => {
+              end()
+              if (onActive) {
+                onActive(_a, _b, _c)
+              }
+            }
+          })
+        }
+      })
+    } else {
+      setState({
         [dir ? 'value1' : 'value2']: false,
         [dir ? 'value2' : 'value1']: true,
         [dir ? 'node1' : 'node2']: prev,
         [dir ? 'node2' : 'node1']: children,
-        [dir ? 'before2' : 'before1']: onBefore,
         [dir ? 'active2' : 'active1']: onActive,
         [dir ? 'cancelled2' : 'cancelled1']: onCancelled,
-        [dir ? 'after2' : 'after1']: onAfter,
+        [dir ? 'after2' : 'after1']: onAfter
       })
     }
   }, [children])

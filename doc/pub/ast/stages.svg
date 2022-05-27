@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="740px" height="480px" viewBox="0 0 740 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>stages</title>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#5E6F6E" offset="0%"></stop>
+            <stop stop-color="#736A55" offset="14.3307244%"></stop>
+            <stop stop-color="#5A281C" offset="42.85304%"></stop>
+            <stop stop-color="#1C295A" offset="57.1259592%"></stop>
+            <stop stop-color="#555D73" offset="85.6863035%"></stop>
+            <stop stop-color="#5E6F6E" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="35" height="6"></rect>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#5E6F6E" offset="0%"></stop>
+            <stop stop-color="#736A55" offset="14.3307244%"></stop>
+            <stop stop-color="#5A281C" offset="42.85304%"></stop>
+            <stop stop-color="#1C295A" offset="57.1259592%"></stop>
+            <stop stop-color="#555D73" offset="85.6863035%"></stop>
+            <stop stop-color="#5E6F6E" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-5" x="35" y="0" width="35" height="6"></rect>
+        <rect id="path-7" x="0" y="0" width="35" height="6"></rect>
+        <rect id="path-9" x="35" y="0" width="35" height="6"></rect>
+    </defs>
+    <g id="stages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#3F474D" x="0" y="0" width="740" height="480"></rect>
+        <path d="M320,0 L320,480 L120,480 L120,0 L320,0 Z M620,0 L620,480 L420,480 L420,0 L620,0 Z" id="Combined-Shape" fill-opacity="0.16" fill="#000000"></path>
+        <g id="Group-3" transform="translate(20.000000, 196.000000)">
+            <g id="Group-7" fill="#000000" fill-opacity="0.6" stroke="#3F474D">
+                <rect id="Rectangle" x="0" y="0" width="100" height="44"></rect>
+                <rect id="Rectangle" x="100" y="0" width="100" height="44"></rect>
+                <rect id="Rectangle" x="100" y="44" width="200" height="44"></rect>
+                <rect id="Rectangle" x="200" y="132" width="300" height="44"></rect>
+                <rect id="Rectangle" x="0" y="132" width="200" height="44"></rect>
+                <rect id="Rectangle" x="100" y="88" width="200" height="44"></rect>
+                <rect id="Rectangle" x="400" y="88" width="200" height="44"></rect>
+                <rect id="Rectangle" x="500" y="132" width="200" height="44"></rect>
+                <rect id="Rectangle" x="400" y="44" width="200" height="44"></rect>
+                <rect id="Rectangle" x="200" y="0" width="100" height="44"></rect>
+                <rect id="Rectangle" x="100" y="176" width="100" height="44"></rect>
+                <rect id="Rectangle" x="100" y="220" width="200" height="44"></rect>
+                <rect id="Rectangle" x="200" y="176" width="100" height="44"></rect>
+                <rect id="Rectangle" x="300" y="0" width="100" height="44"></rect>
+                <rect id="Rectangle" x="400" y="0" width="100" height="44"></rect>
+                <rect id="Rectangle" x="500" y="0" width="100" height="44"></rect>
+                <rect id="Rectangle" x="600" y="0" width="100" height="44"></rect>
+            </g>
+            <g id="Group-8" transform="translate(21.000000, 6.000000)" fill="#FFFFFF" fill-opacity="0.79622282" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16">
+                <text id="initial-initialStyle">
+                    <tspan x="13.638" y="13">initial</tspan>
+                    <tspan x="0" y="29">initialStyle</tspan>
+                </text>
+                <text id="enterFrom-enterFromS">
+                    <tspan x="99.638" y="13">enterFrom</tspan>
+                    <tspan x="86" y="29">enterFromStyle</tspan>
+                </text>
+                <text id="enterActive-enterAct">
+                    <tspan x="146.638" y="57">enterActive</tspan>
+                    <tspan x="133" y="73">enterActiveStyle</tspan>
+                </text>
+                <text id="middle-middleStyle">
+                    <tspan x="309.638" y="145">middle</tspan>
+                    <tspan x="296" y="161">middleStyle</tspan>
+                </text>
+                <text id="side-sideStyle">
+                    <tspan x="66.638" y="145">side</tspan>
+                    <tspan x="53" y="161">sideStyle</tspan>
+                </text>
+                <text id="active-activeStyle">
+                    <tspan x="161.638" y="101">active</tspan>
+                    <tspan x="148" y="117">activeStyle</tspan>
+                </text>
+                <text id="active-activeStyle">
+                    <tspan x="461.638" y="101">active</tspan>
+                    <tspan x="448" y="117">activeStyle</tspan>
+                </text>
+                <text id="side-sideStyle">
+                    <tspan x="566.638" y="145">side</tspan>
+                    <tspan x="553" y="161">sideStyle</tspan>
+                </text>
+                <text id="leaveActive-leaveAct">
+                    <tspan x="446.638" y="57">leaveActive</tspan>
+                    <tspan x="433" y="73">leaveActiveStyle</tspan>
+                </text>
+                <text id="enterTo-enterToStyle">
+                    <tspan x="206.638" y="13">enterTo</tspan>
+                    <tspan x="193" y="29">enterToStyle</tspan>
+                </text>
+                <text id="appealFrom-appealFro">
+                    <tspan x="96.638" y="189">appealFrom</tspan>
+                    <tspan x="83" y="205">appealFromStyle</tspan>
+                </text>
+                <text id="appealActive-appealA">
+                    <tspan x="142.638" y="233">appealActive</tspan>
+                    <tspan x="129" y="249">appealActiveStyle</tspan>
+                </text>
+                <text id="appealTo-appealToSty">
+                    <tspan x="202.638" y="189">appealTo</tspan>
+                    <tspan x="189" y="205">appealToStyle</tspan>
+                </text>
+                <text id="enterEnded-enterEnde">
+                    <tspan x="296.638" y="13">enterEnded</tspan>
+                    <tspan x="283" y="29">enterEndedStyle</tspan>
+                </text>
+                <text id="leaveFrom-leaveFromS">
+                    <tspan x="399.638" y="13">leaveFrom</tspan>
+                    <tspan x="386" y="29">leaveFromStyle</tspan>
+                </text>
+                <text id="leaveTo-leaveToStyle">
+                    <tspan x="506.638" y="13">leaveTo</tspan>
+                    <tspan x="493" y="29">leaveToStyle</tspan>
+                </text>
+                <text id="leaveEnded-leaveEnde">
+                    <tspan x="596.638" y="13">leaveEnded</tspan>
+                    <tspan x="583" y="29">leaveEndedStyle</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="Group" transform="translate(20.000000, 50.000000)">
+            <rect id="Rectangle" fill-opacity="0.6" fill="#000000" x="0" y="70" width="700" height="64"></rect>
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="114" width="700" height="20"></rect>
+            <g id="Group-4" transform="translate(99.500000, 106.000000)" fill="#DDDDDD" fill-rule="nonzero">
+                <path id="Line-2" d="M5,-0.5 L5,0.5 L1,0.5 L1,20.5 L0,20.5 L0,0.499 L-4,0.5 L-4,-0.5 L1,-0.5 L1,-0.499 L5,-0.5 Z"></path>
+                <path id="Line-2" d="M105,-0.5 L105,0.5 L101,0.5 L101,20.5 L100,20.5 L100,0.499 L96,0.5 L96,-0.5 L101,-0.5 L101,-0.499 L105,-0.5 Z"></path>
+                <path id="Line-2" d="M205,-0.5 L205,0.5 L201,0.5 L201,20.5 L200,20.5 L200,0.499 L196,0.5 L196,-0.5 L201,-0.5 L201,-0.499 L205,-0.5 Z"></path>
+                <path id="Line-2" d="M305,-0.5 L305,0.5 L301,0.5 L301,20.5 L300,20.5 L300,0.499 L296,0.5 L296,-0.5 L301,-0.5 L301,-0.499 L305,-0.5 Z"></path>
+                <path id="Line-2" d="M405,-0.5 L405,0.5 L401,0.5 L401,20.5 L400,20.5 L400,0.499 L396,0.5 L396,-0.5 L401,-0.5 L401,-0.499 L405,-0.5 Z"></path>
+                <path id="Line-2" d="M505,-0.5 L505,0.5 L501,0.5 L501,20.5 L500,20.5 L500,0.499 L496,0.5 L496,-0.5 L501,-0.5 L501,-0.499 L505,-0.5 Z"></path>
+            </g>
+            <g id="Group-2" transform="translate(72.000000, 84.000000)" fill="#FFFFFF" fill-opacity="0.79622282" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16">
+                <text id="enterStart">
+                    <tspan x="0" y="13">enterStart</tspan>
+                </text>
+                <text id="entering">
+                    <tspan x="105" y="13">entering</tspan>
+                </text>
+                <text id="enterEnded">
+                    <tspan x="196" y="13">enterEnded</tspan>
+                </text>
+                <text id="leaveStart">
+                    <tspan x="300" y="13">leaveStart</tspan>
+                </text>
+                <text id="leaving">
+                    <tspan x="409" y="13">leaving</tspan>
+                </text>
+                <text id="leaveEnded">
+                    <tspan x="496" y="13">leaveEnded</tspan>
+                </text>
+            </g>
+            <g id="Group-2" transform="translate(32.000000, 116.000000)" fill="#FFFFFF" fill-opacity="0.79622282" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16">
+                <text id="初始时">
+                    <tspan x="0" y="13">初始时</tspan>
+                </text>
+                <text id="准备进入">
+                    <tspan x="94" y="13">准备进入</tspan>
+                </text>
+                <text id="进入中">
+                    <tspan x="200" y="13">进入中</tspan>
+                </text>
+                <text id="进入后">
+                    <tspan x="300" y="13">进入后</tspan>
+                </text>
+                <text id="准备离开">
+                    <tspan x="394.5" y="13">准备离开</tspan>
+                </text>
+                <text id="离开中">
+                    <tspan x="500" y="13">离开中</tspan>
+                </text>
+                <text id="离开后">
+                    <tspan x="600" y="13">离开后</tspan>
+                </text>
+            </g>
+            <g id="Group-5" transform="translate(74.000000, 0.000000)">
+                <text id="onBefore" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFB587">
+                    <tspan x="0" y="25">onBefore</tspan>
+                </text>
+                <text id="onCancelled、onActive" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#72FF95">
+                    <tspan x="211.5" y="13">onCancelled、onActive</tspan>
+                </text>
+                <text id="onAfter" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#8F95FF">
+                    <tspan x="499" y="37">onAfter</tspan>
+                </text>
+                <path id="Line-3" d="M530.5,45.5 L530.5,46.5 L526.5,46.5 L526.5,58.5 L525.5,58.5 L525.5,46.5 L521.5,46.5 L521.5,45.5 L530.5,45.5 Z" fill="#8F95FF" fill-rule="nonzero"></path>
+                <line x1="226" y1="58" x2="526" y2="58" id="Line" stroke="#8F95FF" stroke-linecap="square"></line>
+                <line x1="226" y1="80" x2="226" y2="58" id="Line" stroke="#8F95FF" stroke-linecap="square"></line>
+                <line x1="526" y1="80" x2="526" y2="58" id="Line" stroke="#8F95FF" stroke-linecap="square"></line>
+                <path id="Line-3" d="M280.5,21.5 L280.5,22.5 L276.5,22.5 L276.5,34.5 L275.5,34.5 L275.5,22.5 L271.5,22.5 L271.5,21.5 L280.5,21.5 Z" fill="#72FF95" fill-rule="nonzero"></path>
+                <line x1="126" y1="34" x2="426" y2="34" id="Line" stroke="#72FF95" stroke-linecap="square"></line>
+                <line x1="426" y1="80" x2="426" y2="34" id="Line" stroke="#72FF95" stroke-linecap="square"></line>
+                <line x1="126" y1="80" x2="126" y2="34" id="Line" stroke="#72FF95" stroke-linecap="square"></line>
+                <path id="Line-3" d="M30.5,33.5 L30.5,34.5 L26.5,34.5 L26.5,46.5 L25.5,46.5 L25.5,34.5 L21.5,34.5 L21.5,33.5 L30.5,33.5 Z" fill="#FFB587" fill-rule="nonzero"></path>
+                <line x1="326" y1="80" x2="326" y2="46" id="Line" stroke="#FFB587" stroke-linecap="square"></line>
+                <line x1="26" y1="80" x2="26" y2="46" id="Line" stroke="#FFB587" stroke-linecap="square"></line>
+                <line x1="26" y1="46" x2="326" y2="46" id="Line" stroke="#FFB587" stroke-linecap="square"></line>
+            </g>
+        </g>
+        <g id="Group-10" transform="translate(442.000000, 409.000000)">
+            <g id="Group-9">
+                <text id="in-out" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFFFFF" fill-opacity="0.79622282">
+                    <tspan x="17.5" y="40">in-out</tspan>
+                </text>
+                <g id="Group-6">
+                    <g id="Group-12" transform="translate(0.000000, 5.000000)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Rectangle" fill="#3F474D" xlink:href="#path-2"></use>
+                        <rect id="Rectangle" fill="url(#linearGradient-4)" mask="url(#mask-3)" x="0" y="0" width="70" height="6"></rect>
+                    </g>
+                    <text id="1" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFFFFF" fill-opacity="0.79622282">
+                        <tspan x="14" y="13">1</tspan>
+                    </text>
+                </g>
+                <g id="Group-6" transform="translate(0.000000, 10.000000)">
+                    <g id="Group-11" transform="translate(0.000000, 5.000000)">
+                        <mask id="mask-6" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <g id="Rectangle"></g>
+                        <rect id="Rectangle" fill="url(#linearGradient-4)" mask="url(#mask-6)" x="0" y="0" width="70" height="6"></rect>
+                    </g>
+                    <text id="2" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFFFFF" fill-opacity="0.79622282">
+                        <tspan x="49" y="13">2</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group-9" transform="translate(86.000000, 0.000000)">
+                <text id="out-in" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFFFFF" fill-opacity="0.79622282">
+                    <tspan x="17.5" y="40">out-in</tspan>
+                </text>
+                <g id="Group-6" transform="translate(0.000000, 10.000000)">
+                    <g id="Group-12" transform="translate(0.000000, 5.000000)">
+                        <mask id="mask-8" fill="white">
+                            <use xlink:href="#path-7"></use>
+                        </mask>
+                        <use id="Rectangle" fill="#3F474D" xlink:href="#path-7"></use>
+                        <rect id="Rectangle" fill="url(#linearGradient-4)" mask="url(#mask-8)" x="0" y="0" width="70" height="6"></rect>
+                    </g>
+                    <text id="2" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFFFFF" fill-opacity="0.79622282">
+                        <tspan x="12.5" y="13">2</tspan>
+                    </text>
+                </g>
+                <g id="Group-6">
+                    <g id="Group-11" transform="translate(0.000000, 5.000000)">
+                        <mask id="mask-10" fill="white">
+                            <use xlink:href="#path-9"></use>
+                        </mask>
+                        <g id="Rectangle"></g>
+                        <rect id="Rectangle" fill="url(#linearGradient-4)" mask="url(#mask-10)" x="0" y="0" width="70" height="6"></rect>
+                    </g>
+                    <text id="1" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16" fill="#FFFFFF" fill-opacity="0.79622282">
+                        <tspan x="50.5" y="13">1</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+        <g id="Group-14" transform="translate(652.000000, 408.000000)">
+            <rect id="Rectangle" stroke="#3F474D" fill-opacity="0.6" fill="#000000" x="0" y="0" width="68" height="44"></rect>
+            <text id="类名-样式" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="16">
+                <tspan x="22" y="19" fill="#7EBEFF">类名</tspan>
+                <tspan x="46.864" y="19" fill="#AFD7FF"></tspan>
+                <tspan x="22" y="35" fill="#FF7791">样式</tspan>
+            </text>
+        </g>
+        <g id="Group-15" transform="translate(20.000000, 20.000000)">
+            <rect id="Rectangle" fill="#5E6C76" x="0" y="0" width="110" height="18" rx="3"></rect>
+            <text id="transition-stages" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="18" fill="#191C1E">
+                <tspan x="8" y="13">transition stages</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

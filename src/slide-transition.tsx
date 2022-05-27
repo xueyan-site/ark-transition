@@ -11,9 +11,9 @@ export type SlideTransitionDiraction =
   | 'left'
 
 export interface SlideTransitionProps extends FadeTransitionProps {
-  /** 进入时移动的方向（不传则不移动） **/
+  /** 进入时移动的方向（不传则不移动） */
   direction?: SlideTransitionDiraction
-  /** 进入前或退出后的转换位置（优先级高于direction） */
+  /** 进入前或退出后的转换样式（优先级高于direction） */
   transform?: React.CSSProperties['transform']
 }
 

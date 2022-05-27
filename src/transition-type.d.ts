@@ -3,10 +3,10 @@ import React from "react"
 /**
  * 过渡阶段  
  * initial：初始态  
- * enterStart：进入阶段起始态  
+ * enterStart：进入阶段开始态  
  * entering：进入阶段过渡态  
  * enterEnded：进入终止后  
- * leaveStart：离开阶段起始态  
+ * leaveStart：离开阶段开始态  
  * leaving：离开阶段过渡态  
  * leaveEnded：离开终止后  
  */
@@ -33,7 +33,7 @@ export type TransitionType =
   | 'script'
 
 /**
- * 过渡终止后保持的类名
+ * 未过渡时保持的类名
  */
 export type TransitionKeep =
   | 'none'
@@ -81,7 +81,7 @@ export type TransitionActiveListener = (
 export type TransitionAfterListener = (
   enter: boolean,
   appear: boolean,
-  end: () => void
+  end: TransitionEndHandler
 ) => void
 
 /**
@@ -95,51 +95,68 @@ export type TransitionCancelledListener = (
 ) => void
 
 interface TransitionBaseClassesAndStyles {
+  /** 初始类名 */
   initial?: string
+  /** 初始样式 */
   initialStyle?: React.CSSProperties
-
+  /** 首次渲染时进入开始类名 */
   appearFrom?: string
+  /** 首次渲染时进入开始样式 */
   appearFromStyle?: React.CSSProperties
-
+  /** 首次渲染时进入结束类名 */
   appearTo?: string
+  /** 首次渲染时进入结束样式 */
   appearToStyle?: React.CSSProperties
-
+  /** 进入开始类名 */
   enterFrom?: string
+  /** 进入开始样式 */
   enterFromStyle?: React.CSSProperties
-
+  /** 进入结束类名 */
   enterTo?: string
+  /** 进入结束样式 */
   enterToStyle?: React.CSSProperties
-
+  /** 进入结束后类名 */
   enterEnded?: string
+  /** 进入结束后样式 */
   enterEndedStyle?: React.CSSProperties
-
+  /** 离开开始类名 */
   leaveFrom?: string
+  /** 离开开始样式 */
   leaveFromStyle?: React.CSSProperties
-
+  /** 离开结束类名 */
   leaveTo?: string
+  /** 离开结束样式 */
   leaveToStyle?: React.CSSProperties
-
+  /** 离开后类名 */
   leaveEnded?: string
+  /** 离开后样式 */
   leaveEndedStyle?: React.CSSProperties
 }
 
 interface TransitionClassesAndStyles extends TransitionBaseClassesAndStyles {
+  /** 首次渲染时进入过程中类名 */
   appearActive?: string
+  /** 首次渲染时进入过程中样式 */
   appearActiveStyle?: React.CSSProperties
-
+  /** 进入过程中类名 */
   enterActive?: string
+  /** 进入过程中样式 */
   enterActiveStyle?: React.CSSProperties
-
+  /** 离开过程中类名 */
   leaveActive?: string
+  /** 离开过程中样式 */
   leaveActiveStyle?: React.CSSProperties
-
+  /** 准备进入或离开过程中类名 */
   side?: string
+  /** 准备进入或离开过程中样式 */
   sideStyle?: React.CSSProperties
-
+  /** 进入开始后离开结束前类名 */
   middle?: string
+  /** 进入开始后离开结束前样式 */
   middleStyle?: React.CSSProperties
-
+  /** 进入或离开过程中类名 */
   active?: string
+  /** 进入或离开过程中样式 */
   activeStyle?: React.CSSProperties
 }
 
@@ -183,7 +200,7 @@ export interface TransitionProps extends TransitionClassesAndStyles {
   leaveTimeout?: number
   /** 过渡开始之前 */
   onBefore?: TransitionBeforeListener
-  /** 过渡过程起始时 */
+  /** 过渡过程开始时 */
   onActive?: TransitionActiveListener
   /** 过渡结束后 */
   onAfter?: TransitionAfterListener

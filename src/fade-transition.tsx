@@ -8,6 +8,7 @@ export interface FadeTransitionProps extends Pick<
   TransitionProps,
   | 'children'
   | 'value'
+  | 'appear'
   | 'initialKeep'
   | 'leaveEndedKeep'
   | 'onBefore'
@@ -46,6 +47,7 @@ export interface FadeTransitionProps extends Pick<
 export function FadeTransition({
   children,
   value,
+  appear,
   initialKeep,
   leaveEndedKeep,
   onBefore,
@@ -74,7 +76,7 @@ export function FadeTransition({
   return (
     <Transition
       type="transition"
-      appear={true}
+      appear={appear === undefined ? true : appear}
       value={value}
       onBefore={onBefore}
       onActive={onActive}
