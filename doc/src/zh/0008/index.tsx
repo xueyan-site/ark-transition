@@ -4,7 +4,7 @@ import { Article, Segment } from 'xueyan-react-markdown'
 const MARK1 = `
 FLIP 是 First、Last、Invert、Play 四个单词首字母的缩写。
 
-\`\`\`typescript
+\`\`\`
 class FLIP {
   constructor(
     element?: HTMLElement // FLIP 作用的目标对象
@@ -20,29 +20,38 @@ FLIP 通过以下三个步骤，实现元素自动由初始位置运动到最终
 
 3、移除元素上的 transform，使元素由初始位置运动到最终位置
 
-> 本类使用了 requestAnimationFrame 方法，用以在下一帧画面渲染前获取最新的样式信息。
+> 本类使用 requestAnimationFrame 方法，在下一帧画面渲染前，获取最新的样式信息。  
+> 所以，样式的获取是滞后的，而非立即。
 
-## 成员方法
+## 示例
 
-### FLIP.prepare
+\`\`\`
+const target = document.querySelector('#xxx')
+const flip = new FLIP(target)
+flip.prepare()
+// 改变过 target 的长宽或位置之后
+flip.play()
+\`\`\`
 
-\`\`\`typescript
+## FLIP.prepare
+
+记录元素的初始位置
+
+\`\`\`
 type prepare = (
   element?: HTMLElement // 更换目标元素
 ) => boolean            // 是否完成记录
 \`\`\`
 
-记录元素的初始位置
+## FLIP.play
 
-### FLIP.play
+执行运动动画
 
-\`\`\`typescript
+\`\`\`
 type play = (
   element?: HTMLElement // 更换目标元素
 ) => boolean            // 是否执行了运动
 \`\`\`
-
-执行运动动画
 `
 
 export default function Main() {

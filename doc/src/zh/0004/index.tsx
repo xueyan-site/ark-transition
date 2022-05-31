@@ -10,11 +10,13 @@ const MARK1 = `
 > 页面初始渲染时，若组件可见，且有移动的方位，则会执行滑动效果  
 > 若要去除，设置 appear 为 false  
 
-\`\`\`typescript
+\`\`\`
 type SlideTransition = (
   props: SlideTransitionProps
 ): JSX.Element
 \`\`\`
+
+## 示例
 `
 
 const CODE1 = `
@@ -60,7 +62,7 @@ export default function Slide() {
 const MARK2 = `
 ## SlideTransitionProps
 
-继承自 \`FadeTransitionProps\`。
+继承 \`FadeTransitionProps\` 所有属性
 
 | 属性 | 名称 | 类型 | 说明 |
 | - | - | - | - |
@@ -71,7 +73,7 @@ const MARK2 = `
 
 离开时的移动方向
 
-\`\`\`typescript
+\`\`\`
 type SlideTransitionDiraction = 
   | 'top'     // 向上离开
   | 'right'   // 向右离开

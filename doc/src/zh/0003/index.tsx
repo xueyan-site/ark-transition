@@ -10,11 +10,13 @@ const MARK1 = `
 > 页面初始渲染时，若组件可见，会执行渐变效果  
 > 若要去除，设置 appear 为 false  
 
-\`\`\`typescript
+\`\`\`
 type FadeTransition = (
   props: FadeTransitionProps
 ) => JSX.Element
 \`\`\`
+
+## 示例
 `
 
 const CODE1 = `
@@ -57,19 +59,17 @@ export default function Slide() {
 const MARK2 = `
 ## FadeTransitionProps
 
-继承自 \`TransitionProps\`。
+继承 \`TransitionProps\` 部分属性：
 
-继承属性：
-
-| 属性 | 属性 | 属性 | 属性 |
-| - | - | - | - |
-| children | value | initialKeep | leaveEndedKeep |
-| onBefore | onActive | onAfter | onCancelled |
-| enterFrom | enterFromStyle | leaveTo | leaveToStyle |
-| side | sideStyle | middle | middleStyle |
-| active | activeStyle | | |
-
-自有属性：
+\`children\`、\`value\`、\`initialKeep\`、\`leaveEndedKeep\`、
+<br/>
+\`onBefore\`、\`onActive\`、\`onAfter\`、\`onCancelled\`、
+<br/>
+\`enterFrom\`、\`enterFromStyle\`、\`leaveTo\`、\`leaveToStyle\`、
+<br/>
+\`side\`、\`sideStyle\`、\`middle\`、\`middleStyle\`、
+<br/>
+\`active\`、\`activeStyle\`
 
 | 属性 | 名称 | 类型 | 说明 |
 | - | - | - | - |

@@ -6,13 +6,15 @@ import { MoveTransition } from 'xueyan-react-transition'
 const MARK1 = `
 自动移动式过渡组件
 
-\`\`\`typescript
+\`\`\`
 type MoveTransition = (
   props: MoveTransitionProps
 ): JSX.Element
 \`\`\`
 
 > 使用 FLIP 类实现
+
+## 示例
 `
 
 const CODE1 = `
@@ -77,32 +79,11 @@ export default function Slide() {
 const MARK2 = `
 ## MoveTransitionProps
 
-继承自 \`TransitionProps\`。
+继承 \`TransitionProps\` 部分属性，不包括：
 
-继承时已排除以下 \`TransitionProps\` 属性：
-
-| 属性 | 属性 | 属性 | 属性 |
-| - | - | - | - |
-| render | value | endByOnAfter | initialKeep |
-| leaveEndedKeep | initial | initialStyle | leaveEnded |
-| leaveEndedStyle | | | |
-
-自有属性：
-
-| 属性 | 名称 | 类型 | 说明 |
-| - | - | - | - |
-| mode | 过渡的模式 | \`? MoveTransitionMode\` |  |
-
-## MoveTransitionMode
-
-过渡的模式
-
-\`\`\`typescript
-type MoveTransitionMode = 
-  | 'out-in'  // 先出后进（默认）
-  | 'in-out'  // 先进后出
-  | 'all'     // 同时进行
-\`\`\`
+\`render\`、\`value\`、\`endByOnAfter\`、\`initialKeep\`、\`leaveEndedKeep\`、
+<br/>
+\`initial\`、\`initialStyle\`、\`leaveEnded\`、\`leaveEndedStyle\`
 `
 
 export default function Main() {

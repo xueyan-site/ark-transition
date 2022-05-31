@@ -4,7 +4,7 @@ import { Article, Segment } from 'xueyan-react-markdown'
 const MARK1 = `
 过渡库基础组件
 
-\`\`\`typescript
+\`\`\`
 type Transition = (
   props: TransitionProps
 ) => React.ReactElement
@@ -12,7 +12,7 @@ type Transition = (
 
 ## TransitionProps
 
-继承自 \`TransitionClassesAndStyles\`
+继承 \`TransitionClassesAndStyles\` 所有属性
 
 | 属性 | 名称 | 类型 | 说明 |
 | - | - | - | - |
@@ -34,7 +34,7 @@ type Transition = (
 
 ## TransitionClassesAndStyles
 
-继承自 \`TransitionBaseClassesAndStyles\`
+继承 \`TransitionBaseClassesAndStyles\` 所有属性
 
 各个阶段与类名、样式的关系，请见 “[介绍](${XT_PATH}?doc=0001)” 中的图示。
 
@@ -80,7 +80,7 @@ type Transition = (
 
 过渡元素渲染器
 
-\`\`\`typescript
+\`\`\`
 type TransitionRenderer = (
   props: TransitionRendererProps
 ) => React.ReactElement | null
@@ -100,7 +100,7 @@ type TransitionRenderer = (
 
 过渡阶段状态类型
 
-\`\`\`typescript
+\`\`\`
 type TransitionStage =
  | 'initial'      // 初始态
  | 'enterStart'   // 进入阶段开始态  
@@ -115,7 +115,7 @@ type TransitionStage =
 
 过渡的方式  
 
-\`\`\`typescript
+\`\`\`
 type TransitionType =
  | 'auto'        // 在 animation 和 transition 间自动选择（默认）
  | 'animation'   // 使用 animation 过渡  
@@ -127,7 +127,7 @@ type TransitionType =
 
 未过渡时保持的类名（若它值不为空，则代表元素需要渲染）
 
-\`\`\`typescript
+\`\`\`
 type TransitionKeep =
   | 'none'
   | 'initial'
@@ -144,7 +144,7 @@ type TransitionKeep =
 
 > 可用于检测是否满足过渡的条件
 
-\`\`\`typescript
+\`\`\`
 type TransitionBeforeListener = (
   enter: boolean,      // 是否处于进入态，false代表处于离开态
   appear: boolean      // 是否处于首次呈现过渡中
@@ -155,7 +155,7 @@ type TransitionBeforeListener = (
 
 开始过渡时执行的方法
 
-\`\`\`typescript
+\`\`\`
 type TransitionActiveListener = (
   enter: boolean,            // 是否处于进入态，false代表处于离开态
   appear: boolean,           // 是否处于首次呈现过渡中
@@ -167,7 +167,7 @@ type TransitionActiveListener = (
 
 过渡结束后执行的方法
 
-\`\`\`typescript
+\`\`\`
 type TransitionAfterListener = (
   enter: boolean,             // 是否处于进入态，false代表处于离开态
   appear: boolean,            // 是否处于首次呈现过渡中
@@ -181,7 +181,7 @@ type TransitionAfterListener = (
 
 > 有时会出现过渡被取消的情况，比如，进入过程尚未完成时，状态被改为离开。
 
-\`\`\`typescript
+\`\`\`
 type TransitionCancelledListener = (
   enter: boolean,  // 是否处于进入态，false代表处于离开态
   appear: boolean  // 是否处于首次呈现过渡中
@@ -192,7 +192,7 @@ type TransitionCancelledListener = (
 
 停止过渡
 
-\`\`\`typescript
+\`\`\`
 type TransitionEndHandler = () => void
 \`\`\`
 `

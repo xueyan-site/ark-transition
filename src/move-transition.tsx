@@ -8,7 +8,7 @@ export interface MoveTransitionProps extends Omit<
   TransitionProps,
   | 'render'
   | 'value'
-  | 'endOnAfter'
+  | 'endByOnAfter'
   | 'initialKeep'
   | 'leaveEndedKeep'
   | 'initial'

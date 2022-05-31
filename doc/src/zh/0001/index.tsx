@@ -7,11 +7,11 @@ import { Transition } from 'xueyan-react-transition'
 const MARK1 = `
 transition 库用于实现复杂过渡效果，
 
-过渡 \`各个阶段\` 及其 \`事件\`、\`className\`、\`style\`：
+下图是过渡 \`各个阶段\` 及其 \`事件\`、\`className\`、\`style\`：
 
 ![过渡阶段图](${STAGES_IMG})
 
-## 简单示例
+## 示例
 
 以透明度渐变的方式。从左进入，从右离开。
 `

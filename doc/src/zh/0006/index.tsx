@@ -6,11 +6,13 @@ import { SwitchTransition } from 'xueyan-react-transition'
 const MARK1 = `
 切换式过渡组件
 
-\`\`\`typescript
+\`\`\`
 type SwitchTransition = (
   props: SwitchTransitionProps
 ): JSX.Element
 \`\`\`
+
+## 示例
 `
 
 const CODE1 = `
@@ -71,17 +73,11 @@ export default function Slide() {
 const MARK2 = `
 ## SwitchTransitionProps
 
-继承自 \`TransitionProps\`。
+继承 \`TransitionProps\` 部分属性，不包括：
 
-继承时已排除以下 \`TransitionProps\` 属性：
-
-| 属性 | 属性 | 属性 | 属性 |
-| - | - | - | - |
-| render | value | endByOnAfter | initialKeep |
-| leaveEndedKeep | initial | initialStyle | leaveEnded |
-| leaveEndedStyle | | | |
-
-自有属性：
+\`render\`、\`value\`、\`endByOnAfter\`、\`initialKeep\`、\`leaveEndedKeep\`、
+<br/>
+\`initial\`、\`initialStyle\`、\`leaveEnded\`、\`leaveEndedStyle\`
 
 | 属性 | 名称 | 类型 | 说明 |
 | - | - | - | - |
@@ -91,7 +87,7 @@ const MARK2 = `
 
 过渡的模式
 
-\`\`\`typescript
+\`\`\`
 type SwitchTransitionMode = 
   | 'out-in'  // 先出后进（默认）
   | 'in-out'  // 先进后出

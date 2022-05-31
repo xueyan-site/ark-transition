@@ -6,11 +6,13 @@ import { ExpandTransition } from 'xueyan-react-transition'
 const MARK1 = `
 展开式过渡组件
 
-\`\`\`typescript
+\`\`\`
 type ExpandTransition = (
   props: ExpandTransitionProps
 ): JSX.Element
 \`\`\`
+
+## 示例
 `
 
 const CODE1 = `
@@ -56,15 +58,7 @@ export default function Slide() {
 const MARK2 = `
 ## ExpandTransitionProps
 
-继承自 \`TransitionProps\`。
-
-继承属性：
-
-| 属性 | 属性 | 属性 | 属性 |
-| - | - | - | - |
-| children | value | | |
-
-自有属性：
+继承 \`TransitionProps\` 部分属性：\`children\`、\`value\`
 
 | 属性 | 名称 | 类型 | 说明 |
 | - | - | - | - |
