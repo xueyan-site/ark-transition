@@ -39,37 +39,37 @@ const COLLECTIONS: Collection<string,string>[] = [
     contents: [
       {
         value: '0002',
-        label: 'transition',
+        label: 'Transition',
         icon: COMPONENT_ICON,
         content: () => import('./0002')
       },
       {
         value: '0003',
-        label: 'fade-transition',
+        label: 'FadeTransition',
         icon: COMPONENT_ICON,
         content: () => import('./0003')
       },
       {
         value: '0004',
-        label: 'slide-transition',
+        label: 'SlideTransition',
         icon: COMPONENT_ICON,
         content: () => import('./0004')
       },
       {
         value: '0005',
-        label: 'expand-transition',
+        label: 'ExpandTransition',
         icon: COMPONENT_ICON,
         content: () => import('./0005')
       },
       {
         value: '0006',
-        label: 'switch-transition',
+        label: 'SwitchTransition',
         icon: COMPONENT_ICON,
         content: () => import('./0006')
       },
       {
         value: '0007',
-        label: 'move-transition',
+        label: 'MoveTransition',
         icon: COMPONENT_ICON,
         content: () => import('./0007')
       },
