@@ -36,7 +36,7 @@ type Transition = (
 
 继承 \`TransitionBaseClassesAndStyles\` 所有属性
 
-各个阶段与类名、样式的关系，请见 “[介绍](${XT_PATH}?doc=0001)” 中的图示。
+各个阶段与类名、样式的关系，请见 “[介绍](?doc=0001)” 中的图示。
 
 | 属性 | 名称 | 类型 | 说明 |
 | - | - | - | - |
