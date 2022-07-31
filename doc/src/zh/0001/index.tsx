@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Article, Segment } from 'xueyan-react-markdown'
 import STAGES_IMG from './stages.svg'
 import { Playground } from 'xueyan-react-playground'
-import { Transition } from 'xueyan-react-transition'
+import { Transition } from 'ark-transition'
 
 const MARK1 = `
 transition 库用于实现复杂过渡效果，
@@ -18,7 +18,7 @@ transition 库用于实现复杂过渡效果，
 
 const CODE1 = `
 import React, { useState } from 'react'
-import { Transition } from 'xueyan-react-transition'
+import { Transition } from 'ark-transition'
 
 export default function Example() {
   const [value, setValue] = useState<boolean>(true)

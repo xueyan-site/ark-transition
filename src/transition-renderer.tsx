@@ -1,6 +1,6 @@
 import React, { isValidElement } from 'react'
 import cn from 'classnames'
-import { clone } from 'xueyan-react-clone'
+import { clone } from 'ark-clone'
 import type { 
   TransitionRendererProps, 
   TransitionClassesAndStyles, 

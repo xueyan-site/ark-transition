@@ -1,7 +1,7 @@
 import React, { useRef, isValidElement } from 'react'
 import { Transition } from './transition'
 import { FLIP } from './flip'
-import { clone } from 'xueyan-react-clone'
+import { clone } from 'ark-clone'
 import type { TransitionProps } from './transition-type'
 
 export interface MoveTransitionProps extends Omit<

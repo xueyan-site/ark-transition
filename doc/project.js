@@ -8,7 +8,7 @@ module.exports = {
     'ast': 'pub/ast',
     'com': 'pub/com',
     'utl': 'pub/utl',
-    'xueyan-react-transition': '../src'
+    'ark-transition': '../src'
   },
   serve: {
     port: 12021

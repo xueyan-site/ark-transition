@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Article, Segment } from 'xueyan-react-markdown'
 import { Playground } from 'xueyan-react-playground'
-import { SwitchTransition } from 'xueyan-react-transition'
+import { SwitchTransition } from 'ark-transition'
 
 const MARK1 = `
 切换式过渡组件
@@ -17,7 +17,7 @@ type SwitchTransition = (
 
 const CODE1 = `
 import React, { useState } from 'react'
-import { Transition } from 'xueyan-react-transition'
+import { Transition } from 'ark-transition'
 
 export default function Slide() {
   const [mode, setMode] = useState<string>('out-in')

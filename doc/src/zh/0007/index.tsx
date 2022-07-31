@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Article, Segment } from 'xueyan-react-markdown'
 import { Playground } from 'xueyan-react-playground'
-import { MoveTransition } from 'xueyan-react-transition'
+import { MoveTransition } from 'ark-transition'
 
 const MARK1 = `
 自动移动式过渡组件
@@ -19,7 +19,7 @@ type MoveTransition = (
 
 const CODE1 = `
 import React, { useState } from 'react'
-import { Transition } from 'xueyan-react-transition'
+import { Transition } from 'ark-transition'
 
 export default function Slide() {
   const [move, setMove] = useState<boolean>(true)

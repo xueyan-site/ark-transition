@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Article, Segment } from 'xueyan-react-markdown'
 import { Playground } from 'xueyan-react-playground'
-import { FadeTransition } from 'xueyan-react-transition'
+import { FadeTransition } from 'ark-transition'
 
 const MARK1 = `
 渐变式过渡组件
@@ -21,7 +21,7 @@ type FadeTransition = (
 
 const CODE1 = `
 import React, { useState } from 'react'
-import { Transition } from 'xueyan-react-transition'
+import { Transition } from 'ark-transition'
 
 export default function Slide() {
   const [value, setValue] = useState<boolean>(true)
