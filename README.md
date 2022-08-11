@@ -1,6 +1,8 @@
 # ark-transition
 
-Transition component in a react kit
+![ark-transition](https://xueyan.site/ark-transition/ast/project.png)
+
+`Transition` component in `a react kit`
 
 ## Document
 

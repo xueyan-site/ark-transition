@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Article, Segment } from 'xueyan-react-markdown'
+import { Article, Segment } from 'ark-markdown'
 import STAGES_IMG from './stages.svg'
-import { Playground } from 'xueyan-react-playground'
+import { Playground } from 'ark-playground'
 import { Transition } from 'ark-transition'
 
 const MARK1 = `
